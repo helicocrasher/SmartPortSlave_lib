@@ -8,10 +8,34 @@
     "telemetry",
     "half-duplex"
   ],
+  "homepage": "https://github.com/helicocrasher/SmartPortSlave_lib",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/helicocrasher/SmartPortSlave_lib.git"
   },
-  "frameworks": "arduino",
-  "platforms": "*"
+  "authors": [
+    {
+      "name": "helicocrasher",
+      "email": "felix.mobile@gmx.net",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "frameworks": [
+    "arduino"
+  ],
+  "platforms": [
+    "*"
+  ],
+  "headers": [
+    "SmartPortSlave.h"
+  ],
+  "examples": [
+    "examples/tiny_cross_arch",
+    "examples/tiny_minimal_no_debug"
+  ],
+  "build": {
+    "includeDir": "inc",
+    "srcDir": "src"
+  }
 }
