@@ -2,7 +2,7 @@
 # SmartPortSlave
 
 FrSky SmartPort half-duplex slave helper for Arduino-compatible targets using PlatformIO or the Arduino build flow.
-This library is well suited to generate telemetry sensors or SmartPort bus sniffers. To work it expects a SmartPort master on the bus, usually a FrSky RC receiver.  
+This library is well suited to create SmartPort telemetry sensors or SmartPort bus sniffers. To work it expects a SmartPort master on the bus, usually a FrSky RC receiver.  
 Note: The FrSky Smartport protocol is an inverted half-duplex protocol. To work with a HW UART the used microController has to provide support for that or additional external circuitry will be required. Check target notes.
 
 ## Features
@@ -81,7 +81,7 @@ void loop() {
 - ESP32 uses the extended `begin(...)` overload with explicit RX/TX pin selection and optional signal inversion.
 - STM32 uses Arduino `HardwareSerial` half-duplex support where available.
 - Other Arduino targets fall back to standard `HardwareSerial::begin(57600)`.
-- To work without external circuitry newer STM32 families have to be used. STM32G series, STM32F3, STM32F7 (STM32F1 or STM32F4 do not provide inversion)
+- To work without external circuitry newer STM32 families have to be used. STM32G series, STM32F3, STM32F7 work (STM32F1 or STM32F4 do not provide RX/TX inversion)
 - ESP32 do not directly support half-duplex inverted operation. An external diode is required, anode connected to TX pin, kathode connectd to the SmartPort bus    
 
 ## Publishing Notes
