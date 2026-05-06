@@ -93,6 +93,7 @@ void loop() {
 
 - https://github.com/EdgeTX/edgetx/blob/main/radio/src/telemetry/frsky_defs.h
 - https://github.com/yaapu/FrskyTelemetryScript/wiki/FrSky-SPort-protocol-specs
+- https://github.com/iNavFlight/inav/blob/master/docs/Telemetry.md#available-smartport-sport-sensors
 
 ## Publishing Notes
 
