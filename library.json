@@ -1,0 +1,17 @@
+{
+  "name": "SmartPortSlave",
+  "version": "0.1.0",
+  "description": "FrSky SmartPort half-duplex slave helper for Arduino/PlatformIO targets",
+  "keywords": [
+    "frsky",
+    "smartport",
+    "telemetry",
+    "half-duplex"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "frameworks": "arduino",
+  "platforms": "*"
+}
