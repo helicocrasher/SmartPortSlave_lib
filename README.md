@@ -10,7 +10,7 @@ Note: The FrSky Smartport protocol is an inverted half-duplex protocol. To work 
 - The SmartportSlave class is designed to operate non blocking. All methods return very fast. No delay(), no flush() on non empty TX buffers used
 - Listens to traffic on SmartPort bus and buffers packets received.
 - Sends SmartPort telemetry fields when adressed.
-- one generic 32 bit sensor transmit format is supported: sendSensorValue() -> check SmartPortSlave.h
+- one generic 32 bit sensor transmit format is supported: sendSensorWord() -> check SmartPortSlave.h
 - 10 specific sensor transmit formats are supported: [sendV_A3(), sendLON(), SendLAT(), sendDate(), SendTime(),...] -> check SmartPortSlave.h
 - TX CRC and byte escaping is handled automatically
 - Supports ESP32 and STM32 Arduino targets with target-specific serial setup in `begin(...)`.
