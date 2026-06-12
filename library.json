@@ -1,7 +1,7 @@
 {
   "name": "SmartPortSlave",
-  "version": "0.1.0",
-  "description": "FrSky SmartPort half-duplex slave helper for Arduino/PlatformIO targets",
+  "version": "0.4.1",
+  "description": "FrSky SmartPort protocol library for Arduino/PlatformIO targets",
   "keywords": [
     "frsky",
     "smartport",
@@ -25,8 +25,9 @@
     "arduino"
   ],
   "platforms": [
-    "*"
-  ],
+    "espressif32",
+    "ststm32"
+    ],
   "headers": [
     "SmartPortSlave.h"
   ],

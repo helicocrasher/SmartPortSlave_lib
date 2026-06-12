@@ -30,7 +30,7 @@ class SmartPortSlave {
   bool sniffedDataAvailable();
   void getSniffedData(char* rx_buffer);
   bool txBufferEmpty();
-  void sendSensorWord(uint16_t sensorID, uint32_t sensorValue);
+  void sendSensorWord( uint32_t sensorValue, uint16_t sensorID);
   void sendV_A3(int32_t v_a3_value, int16_t sensorID);
   void sendLON(int32_t lon_min_X10k, int16_t sensorID);
   void sendLAT(int32_t lat_min_X10k, int16_t sensorID);
@@ -43,6 +43,7 @@ class SmartPortSlave {
   void sendHeading(uint32_t heading_centiDeg, int16_t sensorID);
   void sendGnssAltitude(int32_t altitude_cm, int16_t sensorID);
   void sendGnssSpeed(int32_t speed_mm_s, int16_t sensorID);
+  void sendGnssSats(int32_t sats, int16_t sensorID);
 
  private:
   bool m_sensorTxPacketReady;

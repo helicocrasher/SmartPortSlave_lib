@@ -306,7 +306,7 @@ bool SmartPortSlave::txBufferEmpty() {
  return !m_TxMode ; 
 }
 
-void SmartPortSlave::sendSensorWord(uint16_t sensorID, uint32_t sensorValue) {
+void SmartPortSlave::sendSensorWord(uint32_t sensorValue,uint16_t sensorID) {
 //  m_TxMode = true; // Set the transmit mode flag to indicate that we are in transmit mode
   setSensorID(sensorID); // universal send any 32 bit word
   setSensorValue (0, 4,  sensorValue); // 
@@ -438,6 +438,16 @@ void SmartPortSlave::sendGnssAltitude(int32_t altitude_mm, int16_t sensorID) {
   sensorID = 0x0830 |(sensorID & 0x000f); // Ground Speed sensor ID
   setSensorID(sensorID); // Ground Speed sensor ID
   setSensorValue (0, 4,  speed_milli_kts); // Ground Speed value in millimeters per second
+  m_sensorTxPacketReady = true;
+ }
+
+ void SmartPortSlave::sendGnssSats(int32_t sats, int16_t sensorID) {
+//  m_TxMode = true; // Set the transmit mode flag to indicate that we are in transmit mode
+  sensorID = 0x0480 |(sensorID & 0x000f); // GNSS Satellites in view sensor ID used by iNav for the number of satellites in view
+  setSensorID(sensorID); // GNSS Satellites in view sensor ID
+  if (sats > 99) sats = 99; // Limit the number of satellites to 99 for encoding in a single byte
+  if (sats < 0) sats = 0; // Ensure the number of satellites is not negative
+  setSensorValue (0, 4,  sats ); // Number of GNSS satellites in view
   m_sensorTxPacketReady = true;
  }
 
